@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commerce Academic Year 2026–27</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
+header{background:linear-gradient(135deg,#173b70,#285a9f);color:white;padding:34px 18px;text-align:center}
+header h1{font-size:27px;margin:0 0 9px}header p{margin:5px 0;font-size:14px}
+nav{background:#fff;display:flex;overflow:auto;gap:8px;padding:10px;position:sticky;top:0;z-index:5;box-shadow:0 2px 10px #0001}
+nav a{white-space:nowrap;text-decoration:none;color:#173b70;padding:9px 12px;border-radius:20px;font-size:13px;font-weight:bold}
+nav a:hover{background:#eaf0fa}
+main{max-width:900px;margin:auto;padding:18px}
+.hero,.section,.chat{background:white;border-radius:18px;padding:20px;margin-bottom:16px;box-shadow:0 5px 20px #0000000d}
+.hero{text-align:center}.hero h2{color:#173b70;margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px}
+.tile{background:white;border-radius:16px;padding:20px 10px;text-align:center;box-shadow:0 5px 18px #0000000d;text-decoration:none;color:#172033;font-weight:bold}
+.tile .icon{font-size:30px;display:block;margin-bottom:8px}
+h2{margin-top:0;color:#173b70}.empty{padding:14px;background:#f5f7fb;border-radius:10px;color:#667085}
+.subjects{display:grid;grid-template-columns:1fr;gap:8px}.subject{padding:12px;border:1px solid #e4e9f2;border-radius:10px}
+.chat input,.chat textarea{width:100%;padding:13px;border:1px solid #d7deea;border-radius:10px;font-size:15px;margin:7px 0}
+.chat button{width:100%;padding:13px;border:0;border-radius:10px;background:#173b70;color:#fff;font-weight:bold;margin-top:5px}
+#reply{display:none;background:#eef4ff;padding:13px;border-radius:10px;margin-top:12px}
+footer{text-align:center;padding:25px;color:#667085;font-size:13px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,1fr)}.subjects{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+<h1>Commerce Academic Year 2026–27</h1>
+<p>Government Prafulla Chandra (P.C.) College</p>
+<p>HSC 1st Year • Commerce</p>
+</header>
+
+<nav>
+<a href="#home">Home</a><a href="#notice">Notice</a><a href="#routine">Routine</a>
+<a href="#subjects">Subjects</a><a href="#notes">Notes</a><a href="#assignment">Assignment</a><a href="#ai">Ask AI</a>
+</nav>
+
+<main>
+<section class="hero" id="home">
+<h2>Welcome, Commerce Students 👋</h2>
+<p>Class information, study materials, notices and student support in one place.</p>
+</section>
+
+<div class="grid">
+<a class="tile" href="#notice"><span class="icon">📢</span>Notice</a>
+<a class="tile" href="#routine"><span class="icon">📅</span>Routine</a>
+<a class="tile" href="#subjects"><span class="icon">📚</span>Subjects</a>
+<a class="tile" href="#notes"><span class="icon">📖</span>Notes & Materials</a>
+<a class="tile" href="#assignment"><span class="icon">📝</span>Assignments</a>
+<a class="tile" href="#ai"><span class="icon">🤖</span>Ask AI</a>
+</div>
+
+<section class="section" id="notice"><h2>📢 Notice</h2><div class="empty">No notices have been added yet.</div></section>
+<section class="section" id="routine"><h2>📅 Class Routine</h2><div class="empty">Routine will be added by Admin.</div></section>
+
+<section class="section" id="subjects">
+<h2>📚 Commerce Subjects</h2>
+<div class="subjects">
+<div class="subject">Bangla 1st & 2nd Paper</div>
+<div class="subject">English 1st & 2nd Paper</div>
+<div class="subject">ICT</div>
+<div class="subject">Accounting 1st & 2nd Paper</div>
+<div class="subject">Finance, Banking & Insurance 1st & 2nd Paper</div>
+<div class="subject">Business Organization & Management 1st & 2nd Paper</div>
+<div class="subject">Economics 1st & 2nd Paper</div>
+</div>
+</section>
+
+<section class="section" id="notes"><h2>📖 Notes & Materials</h2><div class="empty">Notes and PDFs will be added by Admin.</div></section>
+<section class="section" id="assignment"><h2>📝 Assignments</h2><div class="empty">Assignments will appear here.</div></section>
+
+<section class="chat" id="ai">
+<h2>🤖 Ask AI / Admin</h2>
+<p>Ask a question about your class, subjects, routine or study materials.</p>
+<input id="name" placeholder="Your name">
+<textarea id="question" rows="4" placeholder="Write your question..."></textarea>
+<button onclick="sendQuestion()">Send Question</button>
+<div id="reply"></div>
+</section>
+</main>
+
+<footer>© 2026–27 Commerce Academic Year • Government P.C. College</footer>
+
+<script>
+function sendQuestion(){
+ const name=document.getElementById('name').value.trim();
+ const q=document.getElementById('question').value.trim();
+ const r=document.getElementById('reply');
+ r.style.display='block';
+ if(!q){r.textContent='Please write your question first.';return;}
+ r.innerHTML='<b>Question received!</b><br>'+escapeHtml(name||'Student')+
+ '<br><br>🤖 The real AI + Admin reply system will be connected next.';
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+</script>
+</body>
+</html>
